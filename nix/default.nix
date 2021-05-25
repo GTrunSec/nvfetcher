@@ -1,11 +1,12 @@
 { mkDerivation, aeson, base, binary, bytestring, containers, extra
 , free, lib, microlens, microlens-th, neat-interpolation, shake
 , text, tomland, transformers, validation-selective
+, nix-gitignore
 }:
 mkDerivation {
   pname = "nvfetcher";
   version = "0.1.0.0";
-  src = ../.;
+  src = nix-gitignore.gitignoreSource [ ".git/" "*.nix" ] ../.;
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [

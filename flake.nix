@@ -29,7 +29,7 @@
               commands = with pkgs; [
                 {
                   name = "cabal2nvfetcher";
-                  command = "cd nix && cabal2nix ../. > default.nix";
+                  command = "cd nix && cabal2nix ../. > default.nix && git apply ignore.patch";
                   help = "call cabal2nix to nvfetcher";
                 }
               ];
